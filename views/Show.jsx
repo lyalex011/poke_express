@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Show({ pok, index }) {
+export default function Show({ pok } ) {
 
     return (
         <div>

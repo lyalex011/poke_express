@@ -9,7 +9,7 @@ const pokemonSchema = new Schema({
     },
     img:{
         type:String,
-        required:true 
+        
     }
     
 

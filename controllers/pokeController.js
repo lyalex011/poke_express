@@ -1,15 +1,30 @@
 const pokemon = require('../models/pokemon')
 
-module.exports.index = (req, res) => {
-    res.render('Index', { pokemon })
+const Pokemon = require('../models/PokemonData')
+
+
+
+
+module.exports.index = async (req, res) => {
+    const databasePokemon = await Pokemon.find()
+    console.log(databasePokemon)
+    res.render('Index', { databasePokemon })
 }
 
-module.exports.show = (req, res) => {
-   
-   
-        res.render('Show', { pok: pokemon[req.params.indexOfPokemon], index: req.params.indexOfPokemon })
-   
+
+module.exports.show = async (req, res) => {
+    console.log('GET /pokemon/:id')
+    let pok;
+    try{
+        pok = await Pokemon.findById(req.params.id)
+        console.log(pok)
+    }catch(err){
+        console.log('Failed to find id ' + req.params.id, err)
+    }
+    
+        res.render('Show', { pok })
 }
+
 
 module.exports.new = (req, res) => {
     res.render('New')

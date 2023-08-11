@@ -9,8 +9,8 @@ function New() {
                 <label htmlFor='name'>Name:</label><br />
                 <input type='text' id='name' name='name'></input><br /><br /><br />
 
-                <label htmlFor='color'>Image:</label><br />
-                <input type='text' id='color' name='color'></input><br /><br />
+                {/* <label htmlFor='color'>Image:</label><br />
+                <input type='text' id='color' name='color'></input><br /><br /> */}
 
                 <button>Submit</button>
                 
