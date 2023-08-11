@@ -13,7 +13,7 @@ module.exports.index = async (req, res) => {
 
 
 module.exports.show = async (req, res) => {
-    console.log('GET /pokemon/:id')
+    console.log('GET /pokemon/:id'+ req.params.id)
     let pok;
     try{
         pok = await Pokemon.findById(req.params.id)

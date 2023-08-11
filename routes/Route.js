@@ -10,7 +10,7 @@ router.get('/pokemon', pokemonController.index)
 
 router.post('/pokemon', pokemonController.create)
 
-router.get('/pokemon/:indexOfPokemon', pokemonController.show)
+router.get('/pokemon/:id', pokemonController.show)
 
 
 
