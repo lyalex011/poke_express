@@ -3,6 +3,9 @@ const router = express.Router()
 
 const pokemonController = require('../controllers/pokeController.js')
 
+
+router.get('/pokemon/New', pokemonController.new)
+
 router.get('/pokemon', pokemonController.index)
 
 router.get('/pokemon/:indexOfPokemon', pokemonController.show)

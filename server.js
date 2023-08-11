@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 
+require('dotenv').config()
+const mongoConfig = require('./config')
+mongoConfig()
+
 const router = require('./routes/Route.js')
 
 const jsxEngine = require('jsx-view-engine')
@@ -16,4 +20,6 @@ app.get('/', ( req, res ) => {
 })
 
 
-app.listen(PORT)
+app.listen(PORT, () => {
+    console.log('Listening on port: ' + PORT, process.env.MONGO_URL)
+})
